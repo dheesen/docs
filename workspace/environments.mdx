@@ -1,0 +1,65 @@
+---
+title: "Dedicated Environments: Safe Builds Without the Overhead"
+sidebarTitle: "Environments"
+description: "Each Azotha project runs in a dedicated hosted environment — fully managed by Azotha so you can focus on results, not infrastructure."
+---
+
+Every Azotha project runs inside its own dedicated hosted environment. That environment is where your AI agent does all of its work — installing the tools it needs, writing and testing code, and serving your preview URL. Azotha provisions, maintains, and secures that environment from day one, so you never have to think about what is running underneath your software.
+
+## What Is a Dedicated Environment?
+
+Each project gets its own isolated container in Azotha's hosted infrastructure. Your agent has exclusive access to that environment and uses it to build, test, and iterate on your software. Because each project runs in a separate space, there is no interference between projects and no shared compute with other customers.
+
+The environment comes pre-configured with the runtimes, package managers, and tooling your agent needs. When the agent decides to use a particular technology — a database, a framework, a third-party integration — it installs and configures that technology within your environment without any action required from you.
+
+## What Azotha Manages
+
+Azotha handles every operational aspect of your environment throughout the life of your project.
+
+<Steps>
+  <Step title="Provisioning the environment">
+    When your project is created, Azotha sets up a clean, isolated environment with the baseline tooling your agent needs. Your workspace is ready before your first session begins.
+  </Step>
+  <Step title="Installing dependencies">
+    As your agent builds your software, it installs the libraries, frameworks, and services it requires. Azotha's infrastructure supports this automatically — no manual package management needed.
+  </Step>
+  <Step title="Applying security patches">
+    On **Control** and **Autonomous** plans, Azotha applies security patches and operating-system updates to your environment on a regular schedule, keeping your infrastructure protected without interrupting your work.
+  </Step>
+  <Step title="Managing access">
+    Azotha controls who and what can reach your environment. Your agent operates within defined boundaries, and access to your environment from outside is restricted to authorised parties only.
+  </Step>
+  <Step title="Handling updates and maintenance">
+    Platform-level maintenance — runtime upgrades, infrastructure changes, capacity adjustments — is carried out by Azotha's team. You are notified of anything that affects your project, but you do not need to take action.
+  </Step>
+</Steps>
+
+## What You Don't Need to Worry About
+
+Running software traditionally requires a long list of technical responsibilities. With Azotha, none of the following fall on your team:
+
+- Installing or upgrading runtime environments (Node.js, Python, etc.)
+- Provisioning or managing servers or cloud accounts
+- Configuring and maintaining databases
+- Manually updating software dependencies
+- Provisioning and renewing SSL certificates
+- Setting up CI/CD pipelines or deployment scripts
+- Monitoring uptime or responding to infrastructure incidents
+
+Azotha takes ownership of all of it so that your time and attention stay on what your software should do — not how it runs.
+
+## Environment Security
+
+Your environment is isolated at the infrastructure level. No other Azotha customer shares your compute, storage, or network space.
+
+On the **Control** and **Autonomous** plans, Azotha goes further with active security tooling applied directly to your environment:
+
+- **Automatic security scanning** identifies vulnerabilities in your dependencies and infrastructure configuration.
+- **Vulnerability management** tracks known issues and applies remediations or patches as they become available.
+- **Automatic updates** keep your environment's underlying software current without requiring manual intervention from your team.
+
+These capabilities mean your environment stays protected as new threats emerge — without adding any operational burden to your business.
+
+<Tip>
+  For a full breakdown of the security and compliance features available on each plan — including SBOM generation, license compliance scanning, and governance workflows — see the [Security & Compliance](/plans/security-compliance) page.
+</Tip>

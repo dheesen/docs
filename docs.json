@@ -1,0 +1,72 @@
+{
+  "$schema": "https://mintlify.com/docs.json",
+  "name": "Azotha",
+  "theme": "luma",
+  "colors": {
+    "primary": "#0c0c0c"
+  },
+  "logo": {
+    "light": "https://media.brand.dev/5985bd6b-9d2c-4675-b5ca-9aa5ac327c6c.svg",
+    "dark": "https://media.brand.dev/5985bd6b-9d2c-4675-b5ca-9aa5ac327c6c.svg"
+  },
+  "favicon": "https://media.brand.dev/f23d3cf0-7dff-4b44-a364-29692c6928ac.svg",
+  "navbar": {
+    "primary": {
+      "type": "button",
+      "label": "Contact Us",
+      "href": "https://azotha.com/contact/"
+    }
+  },
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "how-it-works"
+            ]
+          },
+          {
+            "group": "Your Workspace",
+            "pages": [
+              "workspace/overview",
+              "workspace/preview-urls",
+              "workspace/environments",
+              "workspace/project-context"
+            ]
+          },
+          {
+            "group": "AI Agents",
+            "pages": [
+              "agents/overview",
+              "agents/directing-agents",
+              "agents/multi-agent-workflows",
+              "agents/ai-models"
+            ]
+          },
+          {
+            "group": "Use Cases",
+            "pages": [
+              "use-cases/internal-tools",
+              "use-cases/client-portals",
+              "use-cases/automations",
+              "use-cases/prototypes"
+            ]
+          },
+          {
+            "group": "Plans & Support",
+            "pages": [
+              "plans/overview",
+              "plans/security-compliance",
+              "plans/support"
+            ]
+          }
+        ]
+      }
+    ]
+  }
+}

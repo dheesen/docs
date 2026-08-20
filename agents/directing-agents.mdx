@@ -1,0 +1,72 @@
+---
+title: "How to Direct Your AI Agent with Plain Language"
+sidebarTitle: "Directing Agents"
+description: "Learn how to communicate with your Azotha agent effectively — describe tasks clearly, give feedback, and guide it from first idea to finished feature."
+---
+
+Directing your Azotha agent works the same way as briefing a skilled colleague: you describe what you want in plain language, and the agent handles the technical work. You do not need to write code, use technical terminology, or understand how the software is built under the hood. Your job is to communicate the outcome you want clearly — the agent's job is to deliver it.
+
+## How to Give Instructions
+
+Type your instructions directly in the workspace message interface, just as you would send a message to a teammate. You can describe a new feature, request a change to something already built, report an issue you spotted in your preview, or ask the agent to connect your app to an external service.
+
+There is no special syntax to learn. The agent reads natural language, interprets your intent, and gets to work. If it needs more information before it can proceed, it will ask you a focused clarifying question rather than guessing.
+
+## Writing Effective Instructions
+
+How you phrase an instruction directly affects the quality and speed of the result. Follow these four principles to get the best outcomes from your agent.
+
+<Steps>
+  <Step title="Be specific about the outcome, not the implementation">
+    Tell the agent what the finished result should do or look like — not how to build it. Describing the outcome gives the agent the freedom to choose the right technical approach while keeping you in control of the goal.
+
+    ```text
+    Build a form where customers can submit a support request with their name,
+    email, and a description. It should send me an email when submitted.
+    ```
+
+    You do not need to specify which framework, library, or method to use. The agent makes those decisions; you approve the result.
+  </Step>
+  <Step title="Provide context when relevant">
+    If your request relates to existing work — a design style, a previous decision, or a specific part of the project — include that detail in your message. Context helps the agent produce output that fits naturally into what already exists.
+
+    ```text
+    The form should match our existing branding — dark background, white text,
+    our logo at the top.
+    ```
+
+    Because your agent retains project context, you only need to provide new or specific context each time — not a full recap of the entire project.
+  </Step>
+  <Step title="Break large requests into steps">
+    If you have a large feature or a significant change in mind, introduce it in stages rather than all at once. Start with the core functionality, review the preview, and then build outward with follow-up instructions. This approach makes it easier to catch issues early and keep the work moving in the right direction.
+  </Step>
+  <Step title="Give feedback directly on previews">
+    Once the agent builds something, review it in your preview URL and send feedback as a direct instruction. Reference what you see rather than describing abstractly what you want.
+
+    ```text
+    The submit button should be green, not blue.
+    ```
+
+    Precise, observable feedback produces precise results. The agent applies the change and updates the preview so you can confirm it immediately.
+  </Step>
+</Steps>
+
+## Common Task Types
+
+Your agent can handle the full range of tasks involved in building and maintaining software. The following are among the most frequently requested:
+
+- **Building a new feature or page** — describe the purpose, layout, and behaviour you want, and the agent builds it from scratch.
+- **Updating an existing component** — point to what needs changing and describe the desired result; the agent modifies the relevant code.
+- **Connecting to an external service or API** — tell the agent which service you want to use (a payment provider, a CRM, a messaging tool) and what the integration should do.
+- **Debugging an issue in the preview** — describe what is going wrong or paste an error message; the agent diagnoses and fixes the problem.
+- **Generating a report or export** — describe the data you need and the format you want it in; the agent builds the logic to produce it.
+
+## When to Clarify
+
+Sometimes the agent will ask you a clarifying question before proceeding. This happens when your instruction has more than one reasonable interpretation and getting it wrong would mean reworking the output. Treat these questions as you would a question from a colleague — answer directly and add any relevant context that helps.
+
+The more clearly you answer a clarifying question, the more closely the result will match what you have in mind. You can also pre-empt questions by front-loading context in your original instruction whenever you anticipate ambiguity.
+
+<Tip>
+  Start your first session with a small, well-defined task — something with a clear, observable result, like a single form or a specific page. This lets you get comfortable with the feedback loop before moving on to larger features.
+</Tip>

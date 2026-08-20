@@ -1,0 +1,60 @@
+---
+title: "Run Multiple Agents in Parallel with Azotha Workflows"
+sidebarTitle: "Multi-Agent"
+description: "Azotha supports multi-agent workflows so you can run specialised agents in parallel — accelerating complex projects with coordinated, concurrent work."
+---
+
+When a project grows beyond a single stream of work, running everything through one agent sequentially creates a bottleneck. Azotha's multi-agent workflows let you run several specialised agents at the same time — each focused on a distinct part of your project — so that work progresses on multiple fronts in parallel. You gain the speed of a coordinated team without needing to hire, manage, or brief individual developers.
+
+## What Are Multi-Agent Workflows?
+
+A multi-agent workflow replaces the single-agent, one-task-at-a-time model with a set of agents that each own a specific area of responsibility and operate concurrently. For example, while one agent builds your customer-facing frontend UI, a second agent integrates the payment API in the backend, and a third runs a continuous test suite against both. All three work simultaneously, and their outputs come together in your shared project environment.
+
+Each agent in the workflow maintains its own context for its domain, while Azotha coordinates how their contributions fit together. You direct each agent with the same plain-language instructions you already use — the only difference is that you are briefing a team rather than an individual.
+
+## When to Use Multiple Agents
+
+Multi-agent workflows are most valuable when your project has genuinely parallel workstreams that do not need to wait on each other. Consider running multiple agents in these situations:
+
+- **Large projects with independent components** — for example, a customer portal and a separate admin dashboard that share a data layer but can be built concurrently.
+- **Parallel frontend and backend development** — one agent builds the user interface while another develops the API or database logic it will eventually consume.
+- **Continuous testing alongside active development** — dedicate one agent to running and maintaining tests while another builds new features, so quality checks never fall behind the build.
+- **Isolating a long-running automation task** — keep a background agent handling a data migration or scheduled automation without it competing with your active development work.
+- **Rapid prototyping across multiple ideas** — spin up separate agents to explore two different approaches to the same problem and compare the results before committing to one direction.
+
+## What It Looks Like in Practice
+
+Each agent in your workflow has its own presence in the Azotha environment — its own context, its own preview URL, and its own status. You can check the state of all running agents at a glance.
+
+```bash
+$ agent status --all
+
+✓ api-agent.azotha.run   online
+✓ ui-agent.azotha.run    building
+✓ ops-agent.azotha.run   deployed
+```
+
+In this example, the API agent is running and available, the UI agent is actively building a new component, and the ops agent has already deployed its latest change. You can open each preview URL independently and give targeted feedback to each agent without affecting the others.
+
+## Setting Up a Multi-Agent Workflow
+
+You do not configure or wire up agent coordination yourself. To set up a multi-agent workflow, describe the structure of what you need to Azotha — the main components of your project and which parts would benefit from running in parallel. The Azotha team configures the agents, sets up their coordination, and gets the workflow running in your workspace.
+
+Once the workflow is live, you direct each agent through its own context — briefing the UI agent on design and layout, briefing the API agent on data requirements, and so on — or through a shared project description that all agents reference. Azotha handles the technical coordination between them.
+
+## Included in All Plans
+
+Multi-agent workflows are available on every Azotha plan. You do not need to upgrade to unlock parallel agents.
+
+<CardGroup cols={2}>
+  <Card title="Azotha Core" icon="seedling" href="/plans/overview">
+    Start running multiple agents from day one — Core includes multi-agent workflows so you can move fast from the moment you launch your workspace.
+  </Card>
+  <Card title="Azotha Autonomous" icon="infinity" href="/plans/overview">
+    On the Autonomous plan, AI usage is unlimited. Run as many agents as your project demands without tracking model costs — Azotha absorbs them in the flat monthly fee.
+  </Card>
+</CardGroup>
+
+<Note>
+  Azotha configures and manages all agent coordination behind the scenes. You never need to write orchestration code, define message-passing logic, or manage agent communication yourself — describe what you need and the team sets it up for you.
+</Note>

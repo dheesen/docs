@@ -1,0 +1,41 @@
+---
+title: "Automate Business Workflows with AI Agents"
+sidebarTitle: "Automations"
+description: "Describe the manual workflow you want to automate and let your Azotha agent build the integration, trigger logic, and data flow for you."
+---
+
+Repetitive manual tasks drain time that your team should spend on work that actually requires human judgment. Every form that gets copied into a spreadsheet, every notification sent by hand, and every report assembled from scratch is a candidate for automation. Azotha agents can build the integrations, trigger logic, and data flows that eliminate that overhead — and all you need to do is describe what you want in plain language.
+
+## Types of Automations You Can Build
+
+If a task follows a predictable pattern — something happens, then you do the same thing every time — Azotha can automate it. Common automation use cases include:
+
+- **Automated quote or proposal generation** — turn a form submission or CRM entry into a formatted quote without manual assembly
+- **Lead intake forms that push data to your CRM or email** — capture leads from your website and instantly route them where they need to go
+- **Invoice generation triggered by a form or calendar event** — create and send invoices automatically when a project milestone or booking is confirmed
+- **Website-to-backend integrations** — connect a contact form, booking request, or sign-up to a Slack channel, email inbox, or internal database
+- **Scheduled reporting sent to your inbox** — receive a summary of your key metrics, orders, or activity every morning without pulling the data yourself
+- **Data sync between two systems** — keep records consistent across tools without manual exports, imports, or copy-paste
+
+## How to Describe an Automation
+
+The most effective way to describe an automation is to specify three things: the **trigger** (what starts the process), the **data** involved (what information is being moved or transformed), and the **outcome** (what should happen as a result). You don't need technical language — write it the same way you'd explain it to a colleague.
+
+Here's an example of a well-formed automation description:
+
+```text
+When a new lead fills in our contact form, add their details to our CRM spreadsheet 
+and send me a Slack message with their name, company, and what they're interested in.
+```
+
+This tells the agent exactly what the trigger is (form submission), what data to handle (name, company, interest), and what the outcomes are (CRM entry + Slack notification). That's enough to build a working automation.
+
+## Connecting External Services
+
+The agent can integrate with the APIs and webhooks of the external tools your business already uses. To connect a service, you'll provide Azotha with the credentials that service requires — typically a read/write API key or an access token generated from the service's settings page.
+
+For example, if you want to push data into your CRM, you'll retrieve an API key from your CRM's developer or integration settings and share it with Azotha. The agent uses that key to authenticate requests on your behalf. You remain in control of those credentials and can revoke access at any time from the external service's settings.
+
+<Tip>
+  Start with one clearly defined automation rather than trying to connect several systems at once. A single, well-scoped automation — like "send me a daily summary of new orders" — is faster to build, easier to verify, and gives you a working foundation to build on.
+</Tip>

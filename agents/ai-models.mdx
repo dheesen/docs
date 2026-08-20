@@ -1,0 +1,76 @@
+---
+title: "Choose Your AI Model: 75+ Provider Routes Available"
+sidebarTitle: "AI Models"
+description: "Azotha supports 75+ AI model routes including OpenAI, Anthropic, Gemini, Mistral, and Azure — plus European-only routes for data sovereignty requirements."
+---
+
+Azotha is model-agnostic by design. Rather than locking you into a single AI provider, your workspace can route through more than 75 different model providers and gateways — from industry-leading general-purpose models to specialised cloud-platform routes, open-source options, and speed-optimised providers. You choose the model that best fits your project's requirements, your organisation's data policies, and your cost profile, and you can switch at any time without disrupting your work.
+
+## Supported Providers
+
+Azotha organises its model routes into categories so you can quickly find the right provider for your situation.
+
+<CardGroup cols={2}>
+  <Card title="General Purpose" icon="brain" href="/plans/overview">
+    **OpenAI**, **Anthropic (Claude)**, **Google Gemini**, **Mistral**, and **xAI** — the flagship reasoning and generation models suited to the widest range of software-building tasks.
+  </Card>
+  <Card title="Cloud Platforms" icon="cloud" href="/plans/overview">
+    **Azure OpenAI**, **Google Vertex AI**, and **Amazon Bedrock** — use the AI infrastructure already embedded in your existing cloud environment, with the compliance posture that comes with it.
+  </Card>
+  <Card title="Speed-Optimised" icon="bolt" href="/plans/overview">
+    **Groq**, **DeepSeek**, and **MiniMax** — designed for low-latency, high-throughput workloads where response speed matters as much as capability.
+  </Card>
+  <Card title="Open Source / Self-Hosted" icon="box-open" href="/plans/overview">
+    **Ollama**, **LM Studio**, and **Hugging Face** — run open-weight models locally or on your own infrastructure for maximum control over data and cost.
+  </Card>
+  <Card title="Aggregators & Gateways" icon="shuffle" href="/plans/overview">
+    **OpenRouter**, **Together AI**, **Fireworks AI**, **Cloudflare Workers AI**, and **Vercel AI Gateway** — unified routing layers that give you access to dozens of underlying models through a single integration point.
+  </Card>
+  <Card title="Developer Tools" icon="wrench" href="/plans/overview">
+    **GitHub Copilot** and **Z.AI** — AI tooling built for development workflows, integrated directly into your Azotha workspace alongside your other model routes.
+  </Card>
+</CardGroup>
+
+## European Routes
+
+If your organisation operates under GDPR or other data residency requirements that prohibit personal or sensitive data from leaving the European Union, Azotha offers European-only provider routes. When you select a European route, your data is processed exclusively on EU-based infrastructure — it never transits through non-EU servers or jurisdictions.
+
+<Info>
+  European routes are available across plans. If data residency is a requirement for your organisation, tell the Azotha team when you set up your workspace and they will configure the appropriate routes from the start.
+</Info>
+
+This is particularly relevant for businesses in regulated industries — healthcare, finance, legal, and public sector — where the location of data processing is a compliance requirement, not just a preference.
+
+## Avoiding Vendor Lock-In
+
+Your project context, codebase, and workspace are stored in Azotha's managed environment — not inside any model provider's platform. This means changing your model route has no effect on the software that has already been built or the context your agent has accumulated.
+
+You can switch from OpenAI to Anthropic, move from a cloud-platform route to a European-only route, or try a speed-optimised provider for a specific task — all without migrating data, reconfiguring infrastructure, or losing any project history. The model is a tool your agent uses; it is not the foundation your project is built on.
+
+## How to Choose a Model
+
+Not every project needs the same model. Use these guidelines as a starting point and work with the Azotha team to fine-tune your selection.
+
+<Accordion title="General-purpose software building">
+  For most day-to-day tasks — building features, updating components, debugging, and connecting services — **OpenAI** and **Anthropic (Claude)** are strong defaults. Both offer broad capability across code generation, reasoning, and natural-language understanding.
+</Accordion>
+
+<Accordion title="EU data residency requirements">
+  If your organisation cannot allow data to leave the EU, select a **European route**. Azotha's team will identify the highest-capability option available within EU infrastructure for your specific use case.
+</Accordion>
+
+<Accordion title="Cost-sensitive or high-volume workloads">
+  For workloads where you are running many requests — automated testing pipelines, large data processing tasks, or high-frequency agent loops — **Groq** or **DeepSeek** provide fast, cost-efficient throughput without sacrificing output quality for most tasks.
+</Accordion>
+
+<Accordion title="You already use Azure, GCP, or AWS">
+  If your organisation has an existing relationship with a major cloud provider, routing through **Azure OpenAI**, **Google Vertex AI**, or **Amazon Bedrock** lets you keep AI workloads inside your existing cloud account — potentially applying committed spend, existing security controls, and familiar billing.
+</Accordion>
+
+<Accordion title="You want full control over the model">
+  If your policy requires running models on infrastructure you own or manage, **Ollama** or **LM Studio** routes let you connect open-weight models running locally or in your own environment. Azotha integrates with them the same way it does with hosted providers.
+</Accordion>
+
+<Note>
+  On the **Azotha Autonomous** plan, your AI usage budget is unlimited. You pay the flat monthly fee and Azotha absorbs all underlying model costs — regardless of which providers you use or how many requests your agents make. This removes any need to track or optimise for model cost at the usage level.
+</Note>

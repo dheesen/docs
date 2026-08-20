@@ -1,0 +1,48 @@
+---
+title: "Preview Your Agent's Work with a Dedicated URL"
+sidebarTitle: "Preview URLs"
+description: "Every Azotha project gets a unique preview URL so you can review your agent's output in a real browser — without any local setup or deployment steps."
+---
+
+Every time your agent completes a build or makes an update, the result is instantly accessible at your project's dedicated preview URL. You do not need to run anything locally, configure a deployment pipeline, or ask a developer to push changes — Azotha handles all of that automatically so you can focus on reviewing the work and steering what comes next.
+
+## What Is a Preview URL?
+
+When your agent builds or updates something — a web app, an internal dashboard, a client portal, or any other piece of software — Azotha immediately makes that output available at a dedicated URL assigned to your project. The URL follows a consistent format, such as:
+
+```text
+yourproject.azotha.run
+```
+
+This URL always reflects the agent's most recent output. Every time the agent ships an update, the preview refreshes automatically. You can open it in any browser, on any device, without installing anything.
+
+## How to Use It
+
+<Steps>
+  <Step title="Agent completes a build or update">
+    After you give the agent an instruction, it builds or modifies your software inside your hosted workspace. When the work is done, the result is deployed to your preview URL automatically.
+  </Step>
+  <Step title="Check your preview URL">
+    Azotha will notify you when a new build is ready. You can also open your preview URL at any time to see the current state of your project — there is no need to wait for a notification.
+  </Step>
+  <Step title="Open the URL in any browser">
+    Navigate to your dedicated preview URL in any modern browser. The application loads exactly as it will look and behave for end users, giving you an accurate picture of the agent's output.
+  </Step>
+  <Step title="Review, give feedback, and continue">
+    Explore the build, note anything you want to change or add, and then send your next instruction to the agent. Each round of feedback moves the project forward without any technical steps on your part.
+  </Step>
+</Steps>
+
+## Sharing Previews
+
+Your preview URL is shareable. Send it to colleagues, managers, or other stakeholders so they can review progress directly in their browser. Anyone with the URL can open the preview without needing an Azotha account or any technical setup.
+
+Use the preview URL to run internal reviews, gather sign-off from decision-makers, or collect structured feedback before directing the agent to move into a production-ready state. Because the URL is always up to date, everyone who opens it sees the same current version of the software.
+
+<Tip>
+  Sharing your preview URL with non-technical stakeholders is one of the most effective ways to keep a project moving. Instead of describing what the agent has built, send the link and let them interact with the real thing — then forward their feedback directly to the agent as your next instruction.
+</Tip>
+
+<Warning>
+  Preview URLs are intended for internal review and stakeholder feedback, not for production use. They do not include the access controls, authentication layers, or performance configurations appropriate for customer-facing software. If you are building software that end users will access directly, discuss your production access requirements with Azotha before going live.
+</Warning>

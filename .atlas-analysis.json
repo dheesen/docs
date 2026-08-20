@@ -1,0 +1,81 @@
+{
+  "projectType": "saas",
+  "projectName": "Azotha",
+  "projectDescription": "Azotha is an AI-agent platform that designs, builds, and maintains apps, websites, and software for businesses — no technical team required.",
+  "theme": "luma",
+  "primaryColor": "#0c0c0c",
+  "lightColor": null,
+  "darkColor": null,
+  "navigation": {
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "groups": [
+          {
+            "group": "Get Started",
+            "pages": [
+              "introduction",
+              "quickstart",
+              "how-it-works"
+            ]
+          },
+          {
+            "group": "Your Workspace",
+            "pages": [
+              "workspace/overview",
+              "workspace/preview-urls",
+              "workspace/environments",
+              "workspace/project-context"
+            ]
+          },
+          {
+            "group": "AI Agents",
+            "pages": [
+              "agents/overview",
+              "agents/directing-agents",
+              "agents/multi-agent-workflows",
+              "agents/ai-models"
+            ]
+          },
+          {
+            "group": "Use Cases",
+            "pages": [
+              "use-cases/internal-tools",
+              "use-cases/client-portals",
+              "use-cases/automations",
+              "use-cases/prototypes"
+            ]
+          },
+          {
+            "group": "Plans & Support",
+            "pages": [
+              "plans/overview",
+              "plans/security-compliance",
+              "plans/support"
+            ]
+          }
+        ]
+      }
+    ]
+  },
+  "keyFeatures": [
+    "Managed AI agent workspace — agents build and run software in a hosted environment, no local setup required",
+    "Preview via dedicated URL — review agent output instantly without deploying to your own server",
+    "Natural language control — describe what you need in plain language and the agent translates it into working software",
+    "Persistent project context — agents remember your business context across sessions",
+    "Multi-agent workflows — run multiple specialised agents in parallel",
+    "75+ AI model routes — works with OpenAI, Anthropic, Gemini, Mistral, Azure OpenAI, and many more including European routes",
+    "Security scanning and vulnerability management (Control & Autonomous plans)",
+    "License compliance, SBOM generation, and code plagiarism scanning (Autonomous plan)",
+    "Dedicated senior programmer coach (Autonomous plan)"
+  ],
+  "publicApiSurface": [
+    "Agent workspace (hosted, managed environment per customer)",
+    "Preview URL per project",
+    "AI model selection (OpenAI, Anthropic, Gemini, Mistral, OpenRouter, Azure, Google Vertex AI, Amazon Bedrock, Groq, DeepSeek, Ollama, and more)",
+    "Multi-agent workflow configuration",
+    "Security scan results and governance workflows",
+    "SBOM generation",
+    "Email support channel"
+  ]
+}

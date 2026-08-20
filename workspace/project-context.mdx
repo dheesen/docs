@@ -1,0 +1,48 @@
+---
+title: "Project Context: Your Agent Remembers Your Business"
+sidebarTitle: "Project Context"
+description: "Azotha agents retain knowledge of your project across every session — no need to re-explain your business, codebase, or requirements each time you return."
+---
+
+One of the most important differences between Azotha and a generic AI tool is that your agent does not start from scratch every time you open a conversation. Instead, it maintains a persistent understanding of your project — your business, your goals, the features already built, and the decisions already made. Every new instruction you give builds directly on everything that came before it.
+
+## What Is Project Context?
+
+Project context is the accumulated knowledge your agent holds about your specific project. As you work with the agent, it stores information about your business domain, the architecture of your software, the features it has completed, and the preferences and conventions you have established. When you return for a new session, the agent picks up exactly where you left off.
+
+This is not a simple chat history replay. The agent actively uses its stored understanding of your project to make decisions — choosing consistent naming conventions, respecting previously agreed architecture, and avoiding changes that would conflict with work already done.
+
+## What Gets Remembered
+
+Your agent retains a broad range of project-specific knowledge across sessions, including:
+
+- **Business description and goals** — what your business does, who your customers are, and what problem your software is solving.
+- **Tech stack and architecture decisions** — the frameworks, databases, and services chosen for your project, and the reasoning behind those choices.
+- **Previously completed features** — a working understanding of everything already built, so new work integrates cleanly with the existing codebase.
+- **Naming conventions and terminology** — the language specific to your business or industry, so generated code and interfaces stay consistent and readable.
+- **External integrations and APIs** — third-party services your software connects to, including configuration details and usage patterns already established.
+
+## Why It Matters
+
+Generic AI chat tools treat every conversation as a blank slate. If you close the window and come back tomorrow, you have to re-explain who you are, what you are building, and what has already been done before the tool can be useful again. That friction accumulates quickly on any project of real size or complexity.
+
+With Azotha, your agent's memory is tied to your project, not to a single conversation. A request like "add a filtering option to the orders table" is understood immediately — the agent already knows what the orders table looks like, how it was built, and how it fits into the rest of your application. You spend your time directing work, not re-briefing the agent.
+
+## Adding Context
+
+You can proactively give the agent background information at any time. If there is something important about your business, your users, or your technical requirements that the agent should always bear in mind, simply tell it directly in a message. The agent will store and apply that information going forward.
+
+For example, you might send a message like this at the start of a new project or whenever your requirements evolve:
+
+```text
+For reference: our product targets freelancers, we use EUR pricing,
+and our customer IDs follow the format CUST-XXXXX. All date fields
+should display in DD/MM/YYYY format, and we never collect or store
+payment card details directly.
+```
+
+The agent will incorporate these details into every relevant decision it makes — from how it labels form fields to how it structures database records — without you having to repeat them in every subsequent instruction.
+
+<Note>
+  Project context is scoped to each individual project in your workspace. If you start a separate project — for example, a second application for a different part of your business — that project begins with its own fresh context and does not inherit memory from your other projects.
+</Note>
