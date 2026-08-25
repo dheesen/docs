@@ -1,0 +1,61 @@
+---
+title: "Agent Deployments: Publishing Software Safely"
+sidebarTitle: "Deployments"
+description: "Your Azotha agent can deploy approved software to pre-configured targets — with approvals, exact-version pinning, and rollback built in at every step."
+---
+
+Taking your software live no longer requires waiting on a manual handover. Once Azotha has configured a deployment target for your project, your agent can carry out deployments for you: publishing the exact version you reviewed, reporting progress as it happens, and rolling back to the previous release if something looks wrong. You stay in control through approvals — the agent can only ever deploy to targets that Azotha has set up and you have signed off on.
+
+## What Is a Deployment Target?
+
+A deployment target is a pre-configured destination for your software — for example, the production environment where your team or customers use your application. Azotha's team defines each target for your project: where the software runs, how it is built and verified, and how it goes live.
+
+Your agent can see which targets exist and deploy to them, but it cannot invent new destinations, change how a target works, or reach infrastructure outside what has been configured. If your business needs a new target — a staging environment, a second application, a different hosting setup — Azotha's team adds it for you.
+
+## How a Deployment Works
+
+When you tell your agent to deploy, it follows a controlled sequence from your instruction to verified live software.
+
+<Steps>
+  <Step title="You approve the release">
+    After reviewing the result at your preview URL, you tell the agent to deploy. Deployments require your approval, and each approval is bound to a specific target and its exact configuration. If the target's configuration changes later, a fresh approval is required before the agent can deploy to it again.
+  </Step>
+  <Step title="The agent deploys the exact version you reviewed">
+    The deployment is pinned to the precise version of your software that you signed off on — not "the latest changes." What goes live is exactly what you saw in your preview, with no untested work slipping in between review and release.
+  </Step>
+  <Step title="The build and release are verified">
+    The target's configured build, test, and health checks run before the new release is activated. The agent monitors the deployment and reports its status — preparation, activation, and verification — so you always know where things stand.
+  </Step>
+  <Step title="Rollback is always available">
+    Azotha keeps the previous successful release ready. If anything looks wrong after a deployment, the agent can roll back to that release and verify it is healthy again — a single instruction from you, no infrastructure work required.
+  </Step>
+</Steps>
+
+## Directing a Deployment
+
+You direct deployments the same way you direct any other agent task — in plain language.
+
+```text
+The version at the preview URL looks good. Deploy it to production.
+```
+
+```text
+Something is off with the release from this afternoon.
+Roll production back to the previous version.
+```
+
+The agent handles the technical sequence — selecting the approved target, deploying the pinned version, watching the checks, and confirming the outcome — and reports back when your software is live.
+
+## Built-In Safeguards
+
+Agent deployments are designed so that convenience never comes at the cost of control.
+
+- **Approved targets only.** The agent can deploy exclusively to targets Azotha has configured for your project. There is no way for it to deploy anywhere else.
+- **Approvals tied to configuration.** Your approval covers a specific target exactly as it is configured. Any change to that configuration invalidates the approval, so nothing changes underneath you silently.
+- **Exact-version pinning.** Every deployment publishes the precise version you reviewed. Re-deploying the version that is already live is safe and changes nothing.
+- **Verified activation.** A release only becomes live after the target's configured checks pass.
+- **One-step rollback.** The previous successful release is retained and can be restored and re-verified on request.
+
+<Note>
+  Deployment targets are set up by Azotha's team as part of taking your project live. If you are not sure whether your project has a target configured, or you need an additional one, contact the Azotha team.
+</Note>
