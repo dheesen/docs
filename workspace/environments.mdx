@@ -26,6 +26,9 @@ Azotha handles every operational aspect of your environment throughout the life 
   <Step title="Applying security patches">
     On **Control** and **Autonomous** plans, Azotha applies security patches and operating-system updates to your environment on a regular schedule, keeping your infrastructure protected without interrupting your work.
   </Step>
+  <Step title="Backing up your data">
+    Azotha takes automated, encrypted backups of your project's database and stored files on a regular schedule. Each backup captures both as a single consistent restore point, is encrypted before it leaves your environment, and is stored off-host. A backup is only made available after it has been fully validated, and Azotha verifies restores on a schedule so recovery works when you need it.
+  </Step>
   <Step title="Managing access">
     Azotha controls who and what can reach your environment. Your agent operates within defined boundaries, and access to your environment from outside is restricted to authorised parties only.
   </Step>
@@ -44,6 +47,7 @@ Running software traditionally requires a long list of technical responsibilitie
 - Manually updating software dependencies
 - Provisioning and renewing SSL certificates
 - Setting up CI/CD pipelines or deployment scripts
+- Configuring backups or testing disaster recovery
 - Monitoring uptime or responding to infrastructure incidents
 
 Azotha takes ownership of all of it so that your time and attention stay on what your software should do — not how it runs.
@@ -61,5 +65,5 @@ On the **Control** and **Autonomous** plans, Azotha goes further with active sec
 These capabilities mean your environment stays protected as new threats emerge — without adding any operational burden to your business.
 
 <Tip>
-  For a full breakdown of the security and compliance features available on each plan — including SBOM generation, license compliance scanning, and governance workflows — see the [Security & Compliance](/plans/security-compliance) page.
+  For a full breakdown of the security and compliance features available on each plan — including encrypted backups, SBOM generation, license compliance scanning, and governance workflows — see the [Security & Compliance](/plans/security-compliance) page.
 </Tip>

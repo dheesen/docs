@@ -1,7 +1,7 @@
 ---
 title: "Security & Compliance: Azotha Control and Autonomous"
 sidebarTitle: "Security"
-description: "Azotha Control and Autonomous include automated security scanning, vulnerability management, license compliance, SBOM generation, and code governance."
+description: "Azotha Control and Autonomous include automated security scanning, vulnerability management, encrypted backups, license compliance, SBOM generation, and code governance."
 ---
 
 As your software moves from prototype to production, security and compliance stop being optional extras and become essential requirements. Azotha's Control and Autonomous plans include a layered set of automated protections that reduce risk, keep your software current, and give you the documentation and oversight you need before code reaches real users — all without adding any work to your plate.
@@ -35,6 +35,27 @@ This means your software does not quietly accumulate risk over time. Vulnerabili
 Software dependencies age quickly. Outdated packages introduce security gaps, compatibility issues, and technical debt. Azotha applies dependency and environment updates automatically on a regular cycle, keeping your software current without manual intervention.
 
 Updates are applied safely — Azotha verifies that your software continues to function correctly after each update and surfaces any conflicts that require your input.
+
+## Encrypted Backups & Verified Restores
+
+<Info>
+  **Available on:** All Azotha plans
+</Info>
+
+Azotha automatically backs up your project's data as part of every managed environment. Each backup captures your database and your stored files together as one consistent restore point, so the two can never drift apart during recovery. Backups run on a regular schedule without any action from your team.
+
+Every backup is protected end to end:
+
+- **Encrypted before transport.** Backup data is encrypted inside your environment before it is moved to storage, and it stays encrypted at rest.
+- **Stored off-host and immutable.** Backups are kept separate from your environment in storage that prevents modification or early deletion, protecting them from accidental loss and tampering.
+- **Published only after validation.** A restore point only becomes available once every part of it has been verified. Incomplete or corrupted backups are never presented as usable.
+- **Restore-tested on a schedule.** Azotha regularly performs verified test restores, so recovery is proven to work — not just assumed.
+
+Retention keeps a rolling window of validated restore points and always protects the most recent verified backup. If your project ever needs to be recovered, Azotha verifies the restore point first and then performs the restore during a maintenance window, returning your database and files to the exact same moment in time.
+
+<Note>
+  Backups are fully managed by Azotha. There is nothing to configure, schedule, or monitor — data protection is part of what your environment includes from day one. If you need a restore, [raise a support request](/plans/support).
+</Note>
 
 ## License Compliance Scanning
 
