@@ -36,7 +36,9 @@
               "workspace/overview",
               "workspace/preview-urls",
               "workspace/environments",
-              "workspace/project-context"
+              "workspace/project-context",
+              "workspace/roles-permissions",
+              "workspace/audit-log"
             ]
           },
           {

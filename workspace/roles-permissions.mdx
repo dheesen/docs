@@ -1,0 +1,68 @@
+---
+title: "Workspace Roles: Control Who Can Do What"
+sidebarTitle: "Roles & Permissions"
+description: "Azotha workspaces support four access roles — viewer, developer, workspace admin, and installation admin — each with a clearly defined set of capabilities."
+---
+
+Every person who accesses your Azotha workspace is assigned a role. The role determines exactly what that person can see and do, from reading project activity to changing workspace configuration or managing the installation itself. Azotha enforces the same role rules in the hosted interface and in the API, so permissions apply consistently no matter how someone connects.
+
+## Available roles
+
+Azotha provides four roles, ordered from least to most access:
+
+| Role | Best for | Summary |
+| --- | --- | --- |
+| **Viewer** | Stakeholders who follow progress | Read-only access to the workspace and its activity feed. |
+| **Developer** | People who work with the agent | Everything a viewer can do, plus prompting the agent, running commands, and using the terminal. |
+| **Workspace admin** | Project owners | Everything a developer can do, plus managing workspace configuration and saved permissions. |
+| **Installation admin** | The person responsible for the installation | Full access, including installation management, the Activity audit log, and root approvals. |
+
+## What each role can do
+
+Each role grants a fixed set of capabilities. Azotha checks the required capability on every request and hides interface controls that a role cannot use.
+
+| Capability | Viewer | Developer | Workspace admin | Installation admin |
+| --- | :---: | :---: | :---: | :---: |
+| Read workspace content (`workspace.read`) | ✓ | ✓ | ✓ | ✓ |
+| Follow the activity feed (`events.read`) | ✓ | ✓ | ✓ | ✓ |
+| Prompt the agent and edit (`workspace.develop`) | | ✓ | ✓ | ✓ |
+| Run commands and tools (`tools.execute`) | | ✓ | ✓ | ✓ |
+| Use the terminal (`pty.use`) | | ✓ | ✓ | ✓ |
+| Change workspace settings (`workspace.manage`) | | | ✓ | ✓ |
+| Manage saved permissions (`saved_permissions.manage`) | | | ✓ | ✓ |
+| Manage the installation (`installation.manage`) | | | | ✓ |
+| Approve root actions (`root.approve`) | | | | ✓ |
+
+A few examples of how this plays out in practice:
+
+- A **viewer** can open the workspace and watch what the agent is doing, but cannot send prompts, run commands, or open a terminal.
+- A **developer** can direct the agent and use the terminal, but cannot change environment variables, domains, or feature flags.
+- A **workspace admin** can manage all workspace-level configuration, but cannot install updates, change the IP whitelist, or view the security audit log.
+- An **installation admin** can do everything, including the sensitive operations listed below.
+
+## Sensitive actions require a fresh sign-in
+
+Actions that change the installation or approve root access are treated as sensitive. Before performing one, an installation admin must have signed in recently with their password and second factor. If the sign-in is too old, Azotha rejects the request with HTTP `403` and the code `reauthentication_required`. Sign in again, then retry the action.
+
+## What happens when a role is not allowed
+
+When someone attempts an action their role does not permit, Azotha returns HTTP `403` with the code `missing_capability` and names the capability that was required:
+
+```json
+{
+  "_tag": "ForbiddenError",
+  "code": "missing_capability",
+  "message": "This role cannot perform the requested action",
+  "requiredCapability": "workspace.manage"
+}
+```
+
+The hosted interface avoids most of these errors by hiding controls that the current role cannot use. Settings sections, terminal access, and admin panels only appear for roles that hold the matching capability.
+
+## Assigning roles
+
+Roles are assigned per person as part of your workspace access setup. Azotha's team configures roles for you when your workspace is provisioned. Contact Azotha to add people to your workspace or change an existing assignment.
+
+<Note>
+  Every denied attempt is recorded, and administrative actions are captured in the security audit log. See [Activity & Audit Log](/workspace/audit-log) for how installation admins can review this history.
+</Note>

@@ -1,0 +1,73 @@
+---
+title: "Activity & Audit Log: A Complete Record of Admin Actions"
+sidebarTitle: "Activity & Audit Log"
+description: "Azotha keeps an append-only security audit log of administrative activity — filterable in the Activity panel, retained for 365 days, and exportable as JSON."
+---
+
+Azotha records every administrative and security-relevant action in an append-only audit log. Installation admins can review this history in the **Activity** panel in Settings, filter it to answer specific questions, and export it as JSON for compliance reviews or external retention.
+
+The audit log answers questions like "who changed the environment configuration last week?" or "which sign-in attempts failed this month?" without any setup on your side. Logging is always on.
+
+## What gets recorded
+
+Each audit event captures who did what, when, and with what outcome:
+
+- **Action** — a stable name such as `authentication.login`, `workspace.environment.change`, `security.ip_whitelist.change`, `update.install`, or `root.approval`.
+- **Actor** — the account and role that performed the action.
+- **Result** — whether the action was `attempted`, `succeeded`, or `failed`.
+- **Context** — the affected workspace, a correlation ID for tracing related events, the source IP category, and the browser family.
+
+Recorded actions include sign-ins and sign-outs, workspace configuration changes (environment, domain, custom instructions), feature flag and telemetry changes, IP whitelist changes, saved permission changes, updates and rollbacks, backup and restore operations, root approvals, terminal sessions, and audit exports themselves.
+
+<Note>
+  The audit log records administrative and security activity only. Prompt content, agent responses, command output, and tool content are never included.
+</Note>
+
+## Reviewing activity
+
+Open **Settings → Activity** to browse the log. The Activity panel is available to installation admins only.
+
+You can narrow the view with filters:
+
+- **Date range** — restrict events to a from/to window.
+- **Actor** — show actions by a specific account.
+- **Action** — match a specific action name.
+- **Workspace** — limit events to one workspace.
+- **Outcome** — show only attempted, succeeded, or failed events.
+- **Correlation ID** — follow all events that belong to a single operation.
+
+## Retention
+
+Audit events are retained for **365 days**. Each event carries an explicit expiry timestamp, and the log is append-only: events cannot be edited or deleted before they expire. If you need records beyond 365 days, export them before they expire.
+
+## Exporting events
+
+Use the export action in the Activity panel to download the current filtered view as a JSON file. The export applies the same filters as the on-screen list, so you can produce a targeted extract for an auditor rather than the full log.
+
+Exports are also available through the API for automated collection:
+
+```bash
+curl "https://your-installation/api/audit/export?from=1755000000000&result=failed" \
+  --cookie "$SESSION_COOKIE"
+```
+
+The response is vendor-neutral JSON containing the matching events, the filters that were applied, and a delivery contract for reliable ingestion:
+
+- Delivery is **at-least-once**; deduplicate on the event `id`.
+- Large result sets are paginated; pass the returned `nextCursor` to fetch the next page.
+- Add `destination=object_store` to write a durable export checkpoint to object storage. The response then includes the immutable `storageKey`.
+
+The same filters are available on `GET /api/audit` for listing events without producing an export.
+
+<Tip>
+  Feed scheduled exports into your SIEM or archive storage to keep audit records beyond the 365-day retention window.
+</Tip>
+
+<CardGroup cols={2}>
+  <Card title="Roles & Permissions" icon="user-lock" href="/workspace/roles-permissions">
+    See which roles exist, what each can do, and why the Activity panel is limited to installation admins.
+  </Card>
+  <Card title="Security & Compliance" icon="shield-check" href="/plans/security-compliance">
+    Explore the wider set of security features available on the Control and Autonomous plans.
+  </Card>
+</CardGroup>
