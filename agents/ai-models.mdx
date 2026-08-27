@@ -21,10 +21,10 @@ Azotha organises its model routes into categories so you can quickly find the ri
     **Groq**, **DeepSeek**, and **MiniMax** — designed for low-latency, high-throughput workloads where response speed matters as much as capability.
   </Card>
   <Card title="Open Source / Self-Hosted" icon="box-open" href="/plans/overview">
-    **Ollama**, **LM Studio**, and **Hugging Face** — run open-weight models locally or on your own infrastructure for maximum control over data and cost.
+    **Ollama**, **LM Studio**, **Hugging Face**, and **Modal** — run open-weight models locally or on your own infrastructure for maximum control over data and cost.
   </Card>
   <Card title="Aggregators & Gateways" icon="shuffle" href="/plans/overview">
-    **OpenRouter**, **Together AI**, **Fireworks AI**, **Cloudflare Workers AI**, and **Vercel AI Gateway** — unified routing layers that give you access to dozens of underlying models through a single integration point.
+    **OpenRouter**, **Together AI**, **Fireworks AI**, **Cloudflare Workers AI**, **Cloudflare AI Gateway**, and **Vercel AI Gateway** — unified routing layers that give you access to dozens of underlying models through a single integration point.
   </Card>
   <Card title="Developer Tools" icon="wrench" href="/plans/overview">
     **GitHub Copilot** and **Z.AI** — AI tooling built for development workflows, integrated directly into your Azotha workspace alongside your other model routes.
@@ -69,6 +69,12 @@ Not every project needs the same model. Use these guidelines as a starting point
 
 <Accordion title="You want full control over the model">
   If your policy requires running models on infrastructure you own or manage, **Ollama** or **LM Studio** routes let you connect open-weight models running locally or in your own environment. Azotha integrates with them the same way it does with hosted providers.
+
+  If your team deploys models on **Modal**, connect your Modal workspace and Azotha discovers the models running there automatically. The model list stays in sync with your workspace, so newly deployed endpoints become available without any manual catalogue maintenance.
+</Accordion>
+
+<Accordion title="You route AI traffic through Cloudflare">
+  If your organisation already manages AI traffic with **Cloudflare AI Gateway**, you can connect it as a provider route. Enter your Cloudflare account ID, your AI Gateway ID, and a gateway API token, and Azotha routes model requests through your gateway. Your existing gateway controls — caching, rate limiting, and analytics — continue to apply to everything your agent does.
 </Accordion>
 
 <Note>
