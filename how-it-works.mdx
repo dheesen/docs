@@ -24,6 +24,12 @@ Once it receives your instruction, the agent writes code, assembles components, 
 
 As the agent works, it checks its own output, catches errors, and iterates to resolve them before surfacing the result to you. You track progress and see the finished output at your preview URL, where you can interact with the software directly and verify it behaves as expected.
 
+## Approvals and Safeguards
+
+You decide how independently the agent works on each task through an approval profile. **Ask for approval** has the agent check with you before every action that requires permission. **Approve safely**, the default, lets the agent carry out ordinary building work automatically and only asks you at security boundaries. **Maximum sandbox access** approves all optional actions inside the sandbox for that one task, which suits long-running work you do not want interrupted.
+
+Whichever profile you choose, Azotha's hard safety boundaries stay in place. The agent always asks before destructive deletion commands and before reading files that may contain secrets, and it can never act outside its sandboxed workspace. Follow-up tasks spawned from a task inherit its profile, so your choice carries through the whole piece of work. See [Directing Agents](/agents/directing-agents) for guidance on choosing a profile.
+
 ## Persistent Context
 
 Your agent retains a complete memory of your project across every session. It remembers the decisions you have made, the business logic you have explained, the naming conventions your team uses, and the feedback you have given on previous builds.

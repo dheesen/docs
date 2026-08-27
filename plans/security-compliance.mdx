@@ -1,10 +1,24 @@
 ---
 title: "Security & Compliance: Azotha Control and Autonomous"
 sidebarTitle: "Security"
-description: "Azotha Control and Autonomous include automated security scanning, vulnerability management, license compliance, SBOM generation, and code governance."
+description: "How Azotha keeps agent work safe: task approval profiles on every plan, plus security scanning, vulnerability management, SBOMs, and governance."
 ---
 
-As your software moves from prototype to production, security and compliance stop being optional extras and become essential requirements. Azotha's Control and Autonomous plans include a layered set of automated protections that reduce risk, keep your software current, and give you the documentation and oversight you need before code reaches real users — all without adding any work to your plate.
+As your software moves from prototype to production, security and compliance stop being optional extras and become essential requirements. Azotha's Control and Autonomous plans include a layered set of automated protections that reduce risk, keep your software current, and give you the documentation and oversight you need before code reaches real users — all without adding any work to your plate. On every plan, task approval profiles and non-negotiable platform safeguards govern what agents may do without your explicit approval.
+
+## Task Approval Profiles
+
+<Info>
+  **Available on:** All plans
+</Info>
+
+Every task you give an agent runs under an approval profile that determines how much the agent may do without your explicit sign-off. You choose the profile per task and can save a preferred default:
+
+- **Ask for approval** — the agent asks before every action that requires permission.
+- **Approve safely** (default) — the agent automatically approves ordinary work such as editing files and running commands, and asks at security boundaries.
+- **Maximum sandbox access** — the agent automatically approves all optional actions inside its sandbox. This profile applies only to the task at hand and cannot be saved as a default.
+
+Approval profiles adjust convenience, not safety. Azotha enforces its protective boundaries on every profile: destructive deletion commands always require your one-time approval, reads of files that may contain secrets always require your one-time approval, explicitly denied actions stay denied, and the agent can never act outside its sandboxed workspace. These safeguards are enforced by the Azotha platform itself and cannot be switched off by any profile.
 
 ## Security Scanning
 
