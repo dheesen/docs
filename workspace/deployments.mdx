@@ -12,6 +12,8 @@ A deployment target is a pre-configured destination for your software — for ex
 
 Your agent can see which targets exist and deploy to them, but it cannot invent new destinations, change how a target works, or reach infrastructure outside what has been configured. If your business needs a new target — a staging environment, a second application, a different hosting setup — Azotha's team adds it for you.
 
+Targets are not limited to software Azotha built from scratch. If your business already has an established deployment setup, Azotha's team can configure a target that plugs into that existing pipeline, so your agent deploys through the process you already trust.
+
 ## How a Deployment Works
 
 When you tell your agent to deploy, it follows a controlled sequence from your instruction to verified live software.
@@ -45,6 +47,21 @@ Roll production back to the previous version.
 ```
 
 The agent handles the technical sequence — selecting the approved target, deploying the pinned version, watching the checks, and confirming the outcome — and reports back when your software is live.
+
+## Deployments That Survive Interruptions
+
+Real deployments can take time — builds, checks, and activation do not always finish within a single conversation turn. Azotha treats every deployment as a durable job that runs to completion regardless of what happens in your session.
+
+- **The agent waits and picks up automatically.** If a deployment is still running when the agent reaches the end of its working turn, your workspace shows that it is waiting on the deployment. Once the deployment finishes, the agent automatically resumes and reports the outcome — you do not need to prompt it again.
+- **Interruptions do not lose deployments.** If the deployment service restarts mid-deployment, the job resumes from where it left off rather than starting over or silently failing.
+- **No accidental double deployments.** Asking to deploy a version that is already deploying simply reconnects to the deployment in progress. Asking to deploy a different version while one is underway is reported as a conflict instead of launching a competing release.
+- **Cancelling stays safe.** If you cancel a session, the agent stops following the deployment, but the deployment record itself is preserved so you can always see what happened.
+
+Every status the agent reports includes what phase the deployment is in, whether it has finished, and what happens next — so you always know whether your software is live, still on its way, or needs attention.
+
+<Tip>
+  A successful deployment confirms that your software built, activated, and passed its health checks. It does not by itself prove that a specific feature behaves the way you asked. After a deployment, take a moment to verify the actual change in your live application, or ask the agent to check it for you.
+</Tip>
 
 ## Built-In Safeguards
 
