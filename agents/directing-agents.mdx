@@ -51,6 +51,22 @@ How you phrase an instruction directly affects the quality and speed of the resu
   </Step>
 </Steps>
 
+## Choosing an Approval Profile
+
+Every task runs under an approval profile that controls how much the agent may do without asking you first. You pick the profile in the message composer when you start a task, and you can change it at any point while the task is running.
+
+| Profile | What it means |
+| --- | --- |
+| **Ask for approval** | The agent asks before every action that requires permission. Choose this when you want to review each step, for example on sensitive or unfamiliar work. |
+| **Approve safely** (default) | The agent automatically carries out ordinary work — editing files, running commands, searching, and fetching web content — and only asks at security boundaries or for unfamiliar tools. This is the right choice for most tasks. |
+| **Maximum sandbox access** | The agent automatically approves all optional actions inside its sandbox. Choose this for long-running or background tasks where you do not want any interruptions. This profile applies to the current task only and is never saved as your default. |
+
+You can save **Ask for approval** or **Approve safely** as your default for new tasks. If you relax a task's profile while approval requests are already waiting, Azotha automatically resolves the requests that the new profile covers, so the agent resumes without you re-approving each one.
+
+<Note>
+  No profile removes Azotha's protective boundaries. Regardless of the profile you choose, the agent always asks before destructive deletion commands and before reading files that may contain secrets, and it can never step outside its sandbox. See [Security & Compliance](/plans/security-compliance) for details.
+</Note>
+
 ## Common Task Types
 
 Your agent can handle the full range of tasks involved in building and maintaining software. The following are among the most frequently requested:
