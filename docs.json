@@ -36,6 +36,7 @@
               "workspace/overview",
               "workspace/preview-urls",
               "workspace/environments",
+              "workspace/deployments",
               "workspace/project-context"
             ]
           },
