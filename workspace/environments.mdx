@@ -48,6 +48,16 @@ Running software traditionally requires a long list of technical responsibilitie
 
 Azotha takes ownership of all of it so that your time and attention stay on what your software should do — not how it runs.
 
+## Health Visibility for Administrators
+
+Azotha monitors your environment on your behalf, and installation administrators also get built-in visibility into how the environment is doing. Three panels in your workspace settings give you a direct view without any setup:
+
+- **Resource health**: The **Settings → Resource health** panel shows the current CPU, memory, disk, database, and storage signals for your installation. Each component carries a Healthy, Warning, Critical, or Unknown status, together with a short-term trend and a plain-language reason whenever something is not healthy. Measurements are cached and contain no project content.
+- **Operational alerts**: Under **Settings → Operational alerts**, administrators can add email or HTTPS webhook channels so the right people are notified when something needs attention. Each channel selects which alert types it receives, how often an active alert repeats, and a maximum number of deliveries per hour. Channels can be tested, paused, resumed, or removed at any time, and the panel shows the latest delivery status per channel. Alerts cover signals such as disk capacity, memory pressure, database reachability, and failed deployments, and they resolve automatically once the condition recovers.
+- **Operations timeline**: The **Settings → Telemetry** panel includes an operational timeline that correlates deployments, maintenance windows, recovery actions, and incidents from the past seven days in one place. When you notice a change in behaviour, the timeline shows what happened around that moment.
+
+You do not need to act on any of this — Azotha's team still responds to infrastructure incidents for you. These panels exist so administrators can verify environment health, stay informed through their preferred channels, and understand the operational history of their installation at a glance.
+
 ## Environment Security
 
 Your environment is isolated at the infrastructure level. No other Azotha customer shares your compute, storage, or network space.
