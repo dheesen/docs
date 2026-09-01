@@ -88,6 +88,45 @@ Governance workflows give you a clear audit trail — every deployment decision 
   The dedicated senior programmer coach on the Autonomous plan is not just a reviewer — they actively guide technical decisions throughout your project and are available to discuss architecture, compliance concerns, and delivery strategy.
 </Note>
 
+## Verifying Azotha's Own Security Claims
+
+<Info>
+  **Available to:** everyone. The trust center is public and does not require an account.
+</Info>
+
+The features above protect the software Azotha builds for you. But when *your* customers, auditors, or procurement teams ask how secure Azotha itself is, you need evidence rather than assurances. That is what the [Azotha trust center](https://azotha.com/trust) provides.
+
+The trust center publishes a versioned catalog of security claims. Every claim states its owner, scope, applicable versions and hosting models, review dates, and the evidence that backs it. Published snapshots are immutable: an earlier claim is never silently edited, only corrected in a new catalog revision. A machine-readable copy is available for automated vendor-assessment tooling:
+
+```bash
+curl https://azotha.com/api/public/trust-center
+```
+
+### Release evidence
+
+Each Azotha release ships with signed, checksummed evidence files that let you or your auditors verify claims independently:
+
+- **Catalog snapshot**: the trust catalog bound to the exact release version and source commit, in both JSON and Markdown form.
+- **SPDX SBOM**: an SPDX 2.3 inventory of the packages in the Azotha core software.
+- **Provenance statement**: release artifacts, SHA-256 digests, source commit, and build details in an in-toto/SLSA-shaped statement.
+
+Release generation fails automatically when evidence is absent, expired, changed, or bound to a different commit, so a published release always matches its published claims.
+
+### Requesting restricted evidence
+
+Some material, such as the detailed architecture and controls documentation, is not published openly. You can request it directly from the trust center page:
+
+1. Submit a request with your email address and stated purpose. You receive a private receipt; Azotha stores only a keyed hash of your email, not the address itself.
+2. An installation administrator reviews and approves or denies the request.
+3. An approved request produces a download grant that expires after at most 168 hours (7 days).
+4. Downloads are watermarked with the request and expiry details, are never cached, and generate an audit event.
+
+<Tip>
+  If a customer or auditor asks you to demonstrate that Azotha is a trustworthy vendor, point them to the trust center. It is designed to be shared with third parties and complements the SBOM and governance documentation Azotha produces for your own software.
+</Tip>
+
+The trust center also accepts general security questions through a public inquiry form. Suspected vulnerabilities should never be sent through that form; report them through [GitHub Private Vulnerability Reporting](https://github.com/dheesen/azotha/security/advisories/new) instead.
+
 <CardGroup cols={2}>
   <Card title="Compare Plans" icon="table-columns" href="/plans/overview">
     See the full feature comparison and choose the plan that matches your software goals and risk requirements.
