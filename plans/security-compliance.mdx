@@ -12,9 +12,11 @@ As your software moves from prototype to production, security and compliance sto
   **Available on:** Azotha Control and Azotha Autonomous
 </Info>
 
-Azotha continuously scans your codebase and its dependencies for known vulnerabilities and common security issues. Every time the agent writes or updates code, the scanner checks for problems such as insecure configurations, exposed secrets, and dependency versions with published CVEs. Issues are surfaced directly in your workspace so you can see exactly what was found and how it was addressed — no separate tooling or manual audits required.
+Azotha continuously scans your codebase and its dependencies for known vulnerabilities and common security issues. Every time the agent writes or updates code, two complementary checks run automatically: one inspects your dependencies, configuration, and infrastructure for problems such as exposed secrets and dependency versions with published CVEs, and another analyzes the code the agent itself wrote for insecure patterns. Issues are surfaced directly in your workspace so you can see exactly what was found and how it was addressed — no separate tooling or manual audits required.
 
-Security scanning catches risks before they reach production, giving you a reliable safety net whether you are building an internal dashboard or preparing software for external users.
+Findings are also fed back to the agent as it works. When a scan flags an issue in code the agent just wrote, the agent investigates the cause, applies a targeted fix, and waits for a fresh scan to confirm the issue is resolved. Your software is not only checked for security issues — it is actively corrected as it is being built.
+
+Security scanning catches risks before they reach production, giving you a reliable safety net whether you are building an internal dashboard or preparing software for external users. Deployments are gated on these scans: your software can only go live once an up-to-date scan of the exact code being deployed comes back clean.
 
 ## Vulnerability Management
 
