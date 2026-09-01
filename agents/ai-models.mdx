@@ -65,6 +65,8 @@ Not every project needs the same model. Use these guidelines as a starting point
 
 <Accordion title="You already use Azure, GCP, or AWS">
   If your organisation has an existing relationship with a major cloud provider, routing through **Azure OpenAI**, **Google Vertex AI**, or **Amazon Bedrock** lets you keep AI workloads inside your existing cloud account — potentially applying committed spend, existing security controls, and familiar billing.
+
+  For Azure routes, you can connect with **Microsoft Entra ID (Azure CLI)** instead of storing a long-lived API key. Sign in with `az login` in your workspace, then choose the Microsoft Entra ID option under **Settings → Providers → Azure** and select an Azure resource you have access to. Azotha requests short-lived access tokens on demand and never persists them, and the model picker lists the deployments available on your selected resource. The standard API-key method remains available if you prefer it.
 </Accordion>
 
 <Accordion title="You want full control over the model">
